@@ -30,7 +30,7 @@
                 <article>
                     <h2 class="small-blue-header">Demo</h2>
                     <p class="secondary-text">Copy your DDL file into the textbox bellow</p>
-                    <textarea id="w3review" wrap="off" name="w3review">
+                    <textarea id="input-area" wrap="off">
 -- create a basic table for users
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -48,7 +48,7 @@ CREATE TABLE users (
 
                 <article>
                     <p class="secondary-text">Generated SQL will appear in the box bellow</p>
-                    <textarea id="w3review" wrap="off" name="w3review" readonly>
+                    <textarea id="output-area" wrap="off" readonly>
 INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Alice', 'Smith', 'alice.smith@example.com', '2023-12-01');
 INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Bob', 'Johnson', 'bob.johnson@example.com', '2023-12-02');
 INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Charlie', 'Brown', 'charlie.brown@example.com', '2023-12-03');
@@ -60,9 +60,94 @@ INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Ethan', '
                         </div>                     
                 </article>
             </section>
+
+            <section id="how-to-use">
+                <h2 class="medium-black-header">Create data in 3 simple steps</h2>
+                <p class="secondary-text">We empower you to effortlessly generate realistic, diverse data by leveraging AI's strength in creative synthesis</p>
+                
+                <article class="use-step">
+                    <div class="use-step-text">
+                        <img class="number" src="./static/number1.png" alt="white number one in a blue circle">
+                        <div class="text-block">
+                            <p class="use-step-header black">Export your database structure as DDL file</p>
+                            <p class="use-step-text">We use the statements in your DDL file to determine tables, their columns, types and relationships. We support most common DBMS syntax</p>
+                        </div>
+                    </div>
+
+                    <img class="use-case-img" src="./static/step-1-foto.png" alt="cylinder that consists of 3 discs stacked on top of one other points an arrow to a file symbol with dot ddl written inside of it">
+                </article>
+
+                <article class="use-step">
+                    <img class="use-case-img" src="./static/step-2-foto.png" alt="file icon with dot ddl written on it points to a cube with processor symbol which symbolizes internal program">
+
+                    <div class="use-step-text">
+                        <img class="number" src="./static/number2.png" alt="white number two in a blue circle">
+                        <div class="text-block">
+                            <p class="use-step-header black">Copy DDL file to input field and generate</p>
+                            <p class="use-step-text">We leverage AI agents to generate data intelligently, tailored to table names, column attributes, data types, and constraints</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="use-step">
+                    <div class="use-step-text">
+                        <img class="number" src="./static/number3.png" alt="white number three in a blue circle">
+                        <div class="text-block">
+                            <p class="use-step-header black">SQL statements to insert data are generated</p>
+                            <p class="use-step-text">We generate SQL statements ready to execute on your database, seamlessly inserting the newly created data</p>
+                        </div>
+                    </div>
+
+                    <img class="use-case-img" src="./static/step-3-foto.png" alt="a box with a processor symbol (which symbolizes internal program) points to a file with dot ddl written on it">
+                </article>
+            </section>
+
+            <section id="pricing">
+                <h2 class="medium-black-header">Pricing</h2>
+                <p class="secondary-text">Try it out for free and upgrade if you need more power</p>
+
+                <div id="plans">
+                    <div id="free-plan" class="light-grey">
+                        <p class="use-step-header">Free</p>
+                        <p class="plan-attribute-text">Great for trying out DataGen with a few samples</p>
+                        <p class="cost black">Free</p>
+
+                        <div class="plan-attribute">
+                            <img src="./static/blue-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text grey">Basic AI model for data generation</p>
+                        </div>
+                        <div class="plan-attribute">
+                            <img src="./static/blue-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text grey">50 generations per month</p>
+                        </div>
+                    </div>
+                    <div id="paid-plan" class="saturated-blue">
+                        <p class="use-step-header white">Pro</p>
+                        <p class="use-step-text white">Expanded features and support</p>
+                        <p class="cost white">€10<span class="small">/100 tokens</span></p>
+                    
+                        <div class="plan-attribute">
+                            <img src="./static/white-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text white">Advanced AI model for data generation</p>
+                        </div>
+                        <div class="plan-attribute">
+                            <img src="./static/white-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text white">1 generation for 1 token</p>
+                        </div>
+                        <div class="plan-attribute">
+                            <img src="./static/white-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text white">Processing priority</p>
+                        </div>
+                        <div class="plan-attribute">
+                            <img src="./static/white-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text white">Support</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
           </main>
         <footer>
-            Footer
+            Have suggestions? Contact me
         </footer>
     </body>
 </html>
