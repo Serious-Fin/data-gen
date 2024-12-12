@@ -1,5 +1,9 @@
 :root {
     --dark-blue: #0D449C;
+    --saturated-blue: #2E64D7;
+    --black: #121212;
+    --grey: #475569;
+    --alt-white: #F9FAFC;
 }
 
 * {
@@ -13,13 +17,13 @@ html {
 }
 
 header {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 3rem
+    gap: 3rem;
 }
 
 header a {
@@ -30,10 +34,11 @@ header a {
 #title {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 4rem;
     text-align: center;
     gap: 2rem;
+    background-color: var(--alt-white);
 }
 
 #iconWithTitle {
@@ -57,9 +62,40 @@ h1 {
     font-weight: 700;
 }
 
+#demo {
+    
+}
+
+#demo article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    /*border: 1px solid black;*/
+    text-align: center;
+    padding: 4rem;
+}
+
+#demo textarea {
+    width: 60rem;
+    height: 20rem;
+    font-size: 1.3rem;
+    font-family: Consolas, "courier new";
+    padding: 2rem;
+    border-radius: 1rem;
+    /*border: 1px solid black;*/
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.16);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 /* Reusable classes */
 .black {
-    color: #121212;
+    color: var(--black);
 }
 
 .dark-blue {
@@ -68,5 +104,27 @@ h1 {
 
 .secondary-text {
     font-size: 1.4rem;
-    color: #475569;
+    color: var(--grey);
+}
+
+.small-blue-header {
+    font-size: 1.6rem;
+    color: var(--dark-blue);
+}
+
+.blue-button {
+    background-color: var(--saturated-blue);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    border: 2px solid var(--saturated-blue);
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.blue-button:hover {
+    background-color: white;
+    color: var(--saturated-blue);
 }

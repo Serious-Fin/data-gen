@@ -25,6 +25,41 @@
                 <h1>Database populator tool</h1>
                 <p class="secondary-text">Generate real-world data for any database</p>
             </section>
+
+            <section id="demo">
+                <article>
+                    <h2 class="small-blue-header">Demo</h2>
+                    <p class="secondary-text">Copy your DDL file into the textbox bellow</p>
+                    <textarea id="w3review" wrap="off" name="w3review">
+-- create a basic table for users
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    signup_date DATE DEFAULT CURRENT_DATE
+);</textarea>
+                    <div class="button-container">
+                        <button class="blue-button">Generate</button>
+                        <button class="blue-button">Example schema</button>
+                        <button class="blue-button">Clear</button>
+                    </div>
+                </article>
+
+                <article>
+                    <p class="secondary-text">Generated SQL will appear in the box bellow</p>
+                    <textarea id="w3review" wrap="off" name="w3review" readonly>
+INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Alice', 'Smith', 'alice.smith@example.com', '2023-12-01');
+INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Bob', 'Johnson', 'bob.johnson@example.com', '2023-12-02');
+INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Charlie', 'Brown', 'charlie.brown@example.com', '2023-12-03');
+INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Diana', 'Prince', 'diana.prince@example.com', '2023-12-04');
+INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Ethan', 'Hunt', 'ethan.hunt@example.com', DEFAULT);  
+</textarea>   
+                        <div class="button-container">
+                            <button class="blue-button">Copy</button>
+                        </div>                     
+                </article>
+            </section>
           </main>
         <footer>
             Footer
