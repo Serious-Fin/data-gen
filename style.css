@@ -112,7 +112,6 @@ h1 {
 #plans {
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
     max-width: 80rem;
     width: 100%;
     margin-top: 3rem;
@@ -123,8 +122,9 @@ h1 {
 }
 
 #free-plan {
-    max-width: 32rem;
+    max-width: 28rem;
     width: 100%;
+    height: fit-content;
     padding: 2.5rem 1.5rem;
     box-sizing: border-box;
     border-radius: 1.5rem;
@@ -132,15 +132,47 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 2rem;
 }
 
 #paid-plan {
+    display: flex;
+    flex-direction: column;
     max-width: 32rem;
     width: 100%;
     padding: 2.5rem 1.5rem;
     box-sizing: border-box;
     border-radius: 1.5rem;
     text-align: left;
+}
+
+#purchase-button {
+    margin-top: 2rem;
+    align-self: center;
+    background-color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.1s;
+    border: 2px solid var(--saturated-blue);
+}
+
+#purchase-button:hover {
+    background-color: var(--saturated-blue);
+    border: 2px solid white;
+    color: white;
+}
+
+#purchase-button:active {
+    transform: scale(0.9);
+}
+
+footer {
+    padding: 2.5rem;
+    background-color: var(--alt-white);
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 /* Reusable classes */
@@ -182,6 +214,10 @@ h1 {
 .blue-button:hover {
     background-color: white;
     color: var(--saturated-blue);
+}
+
+.blue-button:active {
+    transform: scale(0.9);
 }
 
 .use-step {

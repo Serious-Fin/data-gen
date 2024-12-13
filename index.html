@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <script type="module" src="./scripts/main.js" defer></script>
     </head>
     <body>
         <header>
@@ -30,33 +31,20 @@
                 <article>
                     <h2 class="small-blue-header">Demo</h2>
                     <p class="secondary-text">Copy your DDL file into the textbox bellow</p>
-                    <textarea id="input-area" wrap="off">
--- create a basic table for users
-CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    signup_date DATE DEFAULT CURRENT_DATE
-);</textarea>
+                    <textarea id="input-area" wrap="off"></textarea>
                     <div class="button-container">
                         <button class="blue-button">Generate</button>
-                        <button class="blue-button">Example schema</button>
-                        <button class="blue-button">Clear</button>
+                        <button class="blue-button" id="gen-example">Example schema</button>
+                        <button class="blue-button" id="clear-input">Clear</button>
                     </div>
                 </article>
 
                 <article>
                     <p class="secondary-text">Generated SQL will appear in the box bellow</p>
-                    <textarea id="output-area" wrap="off" readonly>
-INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Alice', 'Smith', 'alice.smith@example.com', '2023-12-01');
-INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Bob', 'Johnson', 'bob.johnson@example.com', '2023-12-02');
-INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Charlie', 'Brown', 'charlie.brown@example.com', '2023-12-03');
-INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Diana', 'Prince', 'diana.prince@example.com', '2023-12-04');
-INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Ethan', 'Hunt', 'ethan.hunt@example.com', DEFAULT);  
-</textarea>   
+                    <textarea id="output-area" wrap="off" readonly>who dis?
+    u ok?</textarea>   
                         <div class="button-container">
-                            <button class="blue-button">Copy</button>
+                            <button class="blue-button" id="copy-to-clipboard">Copy</button>
                         </div>                     
                 </article>
             </section>
@@ -121,6 +109,7 @@ INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Ethan', '
                             <p class="plan-attribute-text grey">50 generations per month</p>
                         </div>
                     </div>
+
                     <div id="paid-plan" class="saturated-blue">
                         <p class="use-step-header white">Pro</p>
                         <p class="use-step-text white">Expanded features and support</p>
@@ -136,18 +125,24 @@ INSERT INTO users (first_name, last_name, email, signup_date) VALUES ('Ethan', '
                         </div>
                         <div class="plan-attribute">
                             <img src="./static/white-checkmark.png" alt="blue checkmark">
+                            <p class="plan-attribute-text white">Access to API</p>
+                        </div>
+                        <div class="plan-attribute">
+                            <img src="./static/white-checkmark.png" alt="blue checkmark">
                             <p class="plan-attribute-text white">Processing priority</p>
                         </div>
                         <div class="plan-attribute">
                             <img src="./static/white-checkmark.png" alt="blue checkmark">
                             <p class="plan-attribute-text white">Support</p>
                         </div>
+
+                        <button id="purchase-button">Coming Soon</button>
                     </div>
                 </div>
             </section>
           </main>
         <footer>
-            Have suggestions? Contact me
+            <p class="grey">© 2024 DataGen. All rights reserved.</p>
         </footer>
     </body>
 </html>
