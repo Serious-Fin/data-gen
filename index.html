@@ -28,15 +28,16 @@
             </section>
 
             <section id="demo">
-                <article>
+                <article id="demo-article">
                     <h2 class="small-blue-header">Demo</h2>
                     <p class="secondary-text">Copy your DDL file into the textbox bellow</p>
                     <textarea id="input-area" wrap="off"></textarea>
                     <div class="button-container">
-                        <button class="blue-button">Generate</button>
+                        <button class="blue-button" id="gen-btn">Generate</button>
                         <button class="blue-button" id="gen-example">Example schema</button>
                         <button class="blue-button" id="clear-input">Clear</button>
                     </div>
+                    <span class="spinner" id="spinner"></span>
                 </article>
 
                 <article>

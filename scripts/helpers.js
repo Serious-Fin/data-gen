@@ -40,3 +40,46 @@ export function copyToClipboard() {
     const inputField = document.getElementById("output-area");
     navigator.clipboard.writeText(inputField.value);
 }
+
+export async function generateResponse() {
+    const button = document.getElementById("gen-btn");
+    const spinner = document.getElementById('spinner');
+
+    button.disabled = true;
+    spinner.classList.add('visible');
+
+    try {
+        await queryAgent()
+    } catch (error) {
+        console.error("An error occurred:", error);
+    } finally {
+        button.disabled = false;
+        spinner.classList.remove('visible');
+    }
+}
+
+async function queryAgent() {
+    const inputText = document.getElementById("input-area").value;
+
+    try {
+        // Send the text to the server
+        const response = await fetch("http://localhost:8080/ping", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: inputText }),
+        });
+
+        if (!response.ok) {
+        throw new Error("Network response was not ok");
+        }
+
+        // Parse the response
+        const result = await response.json();
+        document.getElementById("output-area").value = result.processedText;
+    } catch (error) {
+        console.error("Error:", error);
+        document.getElementById("output-area").value = "An error occurred!";
+    }
+}

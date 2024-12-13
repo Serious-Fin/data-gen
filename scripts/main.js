@@ -1,4 +1,4 @@
-import {generateSchemaExample, clearInputField, copyToClipboard} from "./helpers.js"
+import {generateSchemaExample, clearInputField, copyToClipboard, generateResponse} from "./helpers.js"
 
 const generateSchemaExampleButton = document.getElementById("gen-example");
 generateSchemaExampleButton.addEventListener("click", () => {
@@ -13,4 +13,9 @@ clearInputFieldButton.addEventListener("click", () => {
 const copyOutputFieldButton = document.getElementById("copy-to-clipboard");
 copyOutputFieldButton.addEventListener("click", () => {
     copyToClipboard();
+});
+
+const generateButton = document.getElementById("gen-btn");
+generateButton.addEventListener("click", () => {
+    generateResponse();
 });

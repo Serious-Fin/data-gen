@@ -300,3 +300,31 @@ footer {
 .plan-attribute-text {
     font-size: 1.3rem;
 }
+
+.blue-button:disabled {
+    opacity: 0.5;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid transparent;
+    border-top-color: var(--saturated-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    visibility: hidden;
+    margin-top: 2rem;
+}
+
+.spinner.visible {
+    visibility: visible;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
