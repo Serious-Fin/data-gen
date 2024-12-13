@@ -31,6 +31,17 @@
                     <h2 class="small-blue-header">Demo</h2>
                     <p class="secondary-text">Copy your DDL file into the textbox bellow</p>
                     <textarea id="input-area" wrap="off"></textarea>
+
+                    <div class="form-group">
+                        <label for="numberInput">Select number of rows to generate for each table (1 to 25):</label>
+                        <input type="number" id="numberInput" min="1" max="25" value="5">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="generateDefaults" name="generateDefaults">
+                        <label for="generateDefaults">Generate values for DEFAULT columns as well</label>
+                    </div>
+
                     <div class="button-container">
                         <button class="blue-button" id="gen-btn">Generate</button>
                         <button class="blue-button" id="gen-example">Example schema</button>
@@ -41,8 +52,7 @@
 
                 <article>
                     <p class="secondary-text">Generated SQL will appear in the box bellow</p>
-                    <textarea id="output-area" wrap="off" readonly>who dis?
-    u ok?</textarea>   
+                    <textarea id="output-area" wrap="off" readonly></textarea>   
                         <div class="button-container">
                             <button class="blue-button" id="copy-to-clipboard">Copy</button>
                         </div>                     
@@ -106,22 +116,18 @@
                         </div>
                         <div class="plan-attribute">
                             <img src="./static/blue-checkmark.png" alt="blue checkmark">
-                            <p class="plan-attribute-text grey">50 generations per month</p>
+                            <p class="plan-attribute-text grey">50 cells per week</p>
                         </div>
                     </div>
 
                     <div id="paid-plan" class="saturated-blue">
                         <p class="use-step-header white">Pro</p>
                         <p class="use-step-text white">Expanded features and support</p>
-                        <p class="cost white">€10<span class="small">/100 tokens</span></p>
+                        <p class="cost white">$2.99<span class="small">/500 cells</span></p>
                     
                         <div class="plan-attribute">
                             <img src="./static/white-checkmark.png" alt="blue checkmark">
                             <p class="plan-attribute-text white">Advanced AI model for data generation</p>
-                        </div>
-                        <div class="plan-attribute">
-                            <img src="./static/white-checkmark.png" alt="blue checkmark">
-                            <p class="plan-attribute-text white">1 generation for 1 token</p>
                         </div>
                         <div class="plan-attribute">
                             <img src="./static/white-checkmark.png" alt="blue checkmark">
@@ -137,12 +143,14 @@
                         </div>
 
                         <button id="purchase-button">Coming Soon</button>
+
+                        <p class="bottom-text">* A cell is a single piece of data corresponding to one column in a row; for example, generating one row of a table with 5 columns equals 5 cells.</p>
                     </div>
                 </div>
             </section>
           </main>
         <footer>
-            <p class="grey">© 2024 DataGen. All rights reserved.</p>
+            <p class="grey">© 2024 DataGen. All rights reserved.</p><a href="./terms-and-conditions.html">Terms of Service</a> and <a href="./privacy-policy.html">Privacy Policy</a>
         </footer>
     </body>
 </html>

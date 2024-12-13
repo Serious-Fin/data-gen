@@ -71,7 +71,7 @@ h1 {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
 }
 
 #demo textarea {
@@ -197,6 +197,12 @@ footer {
 .medium-black-header {
     font-size: 2rem;
     color: var(--black);
+}
+
+.small-black-header {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-top: 1rem;
 }
 
 .blue-button {
@@ -327,4 +333,46 @@ footer {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.form-group {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.bottom-text {
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.top-space {
+    margin-top: 3rem;
+}
+
+.terms {
+    margin-top: 0.5rem;
+    color: var(--black);
+    font-size: 1.4rem;
+}
+
+#terms-and-conditions {
+    min-height: 100vh;
+    padding: 4rem 8rem;
+    box-sizing: border-box;
+}
+
+#privacy-policy {
+    min-height: 100vh;
+    padding: 4rem 8rem;
+    box-sizing: border-box;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--saturated-blue);
 }

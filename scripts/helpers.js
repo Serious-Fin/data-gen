@@ -19,7 +19,7 @@ CREATE TABLE employees (
 );`,
 `-- course table
 CREATE TABLE courses (
-    course_id SERIAL PRIMARY KEY,
+    course_id INT PRIMARY KEY,
     title TEXT NOT NULL,
     description TEXT,
     price NUMERIC(10, 2) DEFAULT 0.00,
@@ -60,22 +60,31 @@ export async function generateResponse() {
 
 async function queryAgent() {
     const inputText = document.getElementById("input-area").value;
+    const ignoreDefault = !document.getElementById('generateDefaults').checked;
+    let numberInput = parseInt(document.getElementById('numberInput').value, 10);
+    if (numberInput < 1 || !numberInput) {
+        numberInput = 1;
+    } else if (numberInput > 25) {
+        numberInput = 25;
+    }
 
     try {
-        // Send the text to the server
-        const response = await fetch("http://localhost:8080/ping", {
+        const response = await fetch("http://localhost:8080/generate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: inputText }),
+        body: JSON.stringify({ 
+            text: inputText,
+            rowCount: numberInput,
+            ignoreDefault: ignoreDefault
+        }),
         });
 
         if (!response.ok) {
-        throw new Error("Network response was not ok");
+            throw new Error("Network response was not ok");
         }
 
-        // Parse the response
         const result = await response.json();
         document.getElementById("output-area").value = result.processedText;
     } catch (error) {

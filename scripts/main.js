@@ -19,3 +19,13 @@ const generateButton = document.getElementById("gen-btn");
 generateButton.addEventListener("click", () => {
     generateResponse();
 });
+
+const numberInput = document.getElementById('numberInput');
+numberInput.addEventListener('change', () => {
+    const value = parseInt(numberInput.value, 10);
+    if (value < 1 || !value) {
+      numberInput.value = 1; // Minimum value
+    } else if (value > 25) {
+      numberInput.value = 25; // Maximum value
+    }
+  });
