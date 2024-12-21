@@ -69,7 +69,7 @@ async function queryAgent() {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/generate", {
+        const response = await fetch("https://db-populator.fly.dev:8080/generate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
