@@ -25,6 +25,18 @@ CREATE TABLE courses (
     price NUMERIC(10, 2) DEFAULT 0.00,
     is_published BOOLEAN DEFAULT FALSE,
     instructor_id INT NOT NULL
+);`,
+`CREATE TABLE Persons (
+	PersonID INT PRIMARY KEY,
+	PersonID2 INT PRIMARY KEY
+);
+CREATE TABLE Orders (
+	OrderID INT NOT NULL,
+	OrderID2 INT,
+	PersonID INT,
+	PersonID2 integer,
+	PRIMARY KEY (OrderID, OrderID2),
+	CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID, PersonID2) REFERENCES Persons(PersonID, PersonID2)
 );`]
     const inputField = document.getElementById("input-area");
     const text = examples[Math.floor(Math.random() * examples.length)];
